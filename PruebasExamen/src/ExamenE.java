@@ -3,6 +3,14 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -179,11 +187,39 @@ public class ExamenE extends JFrame {
 		JButton btnImpI = new JButton("Imprimir Ingresos");
 		btnImpI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Quiero q saque una ventana en pantalla utilizando el método devolverIngresos NO VA alternativa a cont para usar boton, con un for
+			try {
+			//Quiero q saque una ventana en pantalla utilizando el método devolverIngresos, NO VA, alternativa a cont para usar botoncon un for
+			//JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de "+devolverIngresos());
+				
+				//Creo un archivo de texto con los ingresos
+				FileWriter listaIngresos=new FileWriter ("listaIngresos.txt",true);
+				PrintWriter escribir= new PrintWriter (listaIngresos);
+				String dato;
+				//bf nos va a permitir capturar lo que ingresemos por teclado
+				BufferedReader bf=new BufferedReader (new InputStreamReader (System.in));
+			    
+				
+			for(int i=0;i<ingresos.length;i++){
+			JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]);
 			
-			//JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de "+ingIntrod);
-				for(int i=0;i<ingresos.length;i++){
-				JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]);
+				String cadena= (String.valueOf(ingresos));
+				//ingIntrod=bf.readLine();//capturamos dato	
+				
+				
+				//Para poder almacenar todo estos datos necesito concatenarlos
+				//Guardar
+				escribir.println("Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]+cadena);
+				dato=bf.readLine();
+				}
+				//Despues del bucle importante cerrar el  flujo de archivos
+				listaIngresos.close();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					System.out.println("No puedo guardar los ingresos en el archivo");
+				
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 				}
 		});

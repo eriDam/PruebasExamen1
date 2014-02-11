@@ -85,7 +85,7 @@ public class ExamenE extends JFrame {
 			  
 			  String tTotal=String.valueOf(total);
 			  campoTxtTotal.setText(tTotal);
-			   JOptionPane.showMessageDialog(null,"Saldo: "+total);
+			  JOptionPane.showMessageDialog(null,"Saldo: "+total);
 			  
 			}
 		
@@ -104,7 +104,7 @@ public class ExamenE extends JFrame {
 				//todo el codigo a ejecutar dentro de try para q lo intente y catch captura si hay excepción
 				try{
 				//Se comprobará que no hay más ingresos de 10
-				if(ingIntrod<=10){
+				if(ingIntrod<10){
 				//aumento en uno la posicion del array
 				ingIntrod++;
 				//guardo en el array el texto campotxIntroIng  convertido a float
@@ -192,7 +192,7 @@ public class ExamenE extends JFrame {
 				//JOptionPane.showMessageDialog(null,"Número de Gastos: "+devolverGastos());
 				for(int i=0;i<gastos.length;i++){
 					
-				JOptionPane.showMessageDialog(null,"Número de gasto: "+i+ " introducido en caja con un valor de  "+gastos[i]);
+				JOptionPane.showMessageDialog(null,"Número de gasto: "+i+ " introducido en caja con un valor de  "+gastoIntrod);
 				}
 				
 			}

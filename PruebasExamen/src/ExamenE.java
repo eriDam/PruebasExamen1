@@ -108,25 +108,26 @@ public class ExamenE extends JFrame {
 				
 				//guardo en el array el texto campotxIntroIng  convertido a float
 				ingresos[ingIntrod]=Float.parseFloat(campotxIntroIng.getText());			
-				
-				//este numIngr vale la variable ingIntrod convertida a String para mostrarlo en pantalla
-				numIngr.setText(String.valueOf(ingIntrod));		
-				//
-				//aumento en uno la posicion del array
-				ingIntrod++;
-				campotxIntroIng.setText("");
 				//Voy imprimiendo x consola a ver
 				System.out.println("Número de ingreso: "+ingIntrod+ " introducido en caja con un valor de  "+ingresos[ingIntrod]);
-				//Muestro un mensaje en pantalla en otra ventana para q informe del gasto almacenado
+				/*Muestro un mensaje en pantalla en otra ventana para q informe del gasto almacenado . 
+				Lo dejo comentado para q no salte cada vez
 				//JOptionPane.showMessageDialog(null,"Número de ingreso: "+ingIntrod+ " introducido en caja con un valor de  "+ingresos[ingIntrod]); 
-				//System.out.println(ingresos[ingIntrod]);
+				*/
+				//aumento en uno la posicion del array
+				ingIntrod++;
+				//este numIngr vale la variable ingIntrod convertida a String para mostrarlo en pantalla
+				numIngr.setText(String.valueOf(ingIntrod));	
+				campotxIntroIng.setText("");
 				}
 	
 				//catch especifica entre parentesis 1 parametro d excepcion
-				}catch (Exception e) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
+				}catch ( NumberFormatException noNumber) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
 					//Si no se que excepcion quiero capturar pongo e 
-			      JOptionPane.showMessageDialog (null,"¡¡Fijate, algo ha ido mal!!");	
-			      }	
+			      JOptionPane.showMessageDialog (null,"¡¡ Fijate, has puesto algo que no es un número \n     o lo has dejado en blanco !!");	
+				 }catch( ArrayIndexOutOfBoundsException excepExcederPos){
+					 JOptionPane.showMessageDialog (null,"¡¡ Te has excedido en las posiciones !!");
+				 }	
 			}
 		});
 
@@ -150,19 +151,25 @@ public class ExamenE extends JFrame {
 				
 				//este texto vale la variable gastoIntrod convertida a String para mostrarlo en pantalla
 				numGast.setText(String.valueOf(gastoIntrod));	
-				//EXTRA cuando el campo de texto sea introducido se pondra a cero
+				//Voy imprimiendo x consola a ver
+				System.out.println("Número de Gasto: "+gastoIntrod+" introducido en caja con un valor de  "+gastos[gastoIntrod]);}
+				
+				
 				//Se actualizará la ventana con el valor de número de gastos.
 				gastoIntrod++;
+				//EXTRA cuando el campo de texto sea introducido se pondra en blanco despues de guardar
 				campotxIntroGasto.setText("");
 				
 						
-				//Voy imprimiendo x consola a ver
-				System.out.println("Número de Gasto: "+gastoIntrod+" introducido en caja con un valor de  "+gastos[gastoIntrod]);}
+				
 								
 				//cath especifica entre parentesis 1 parametro d excepcion
-				}catch (Exception NumberFormatException) {
-					  JOptionPane.showMessageDialog(null,"¡¡Fijate, que son números!!");	
-				}		
+				}catch ( NumberFormatException noNumber) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
+					//Si no se que excepcion quiero capturar pongo e 
+			      JOptionPane.showMessageDialog (null,"¡¡ Fijate, has puesto algo que no es un número \n     o lo has dejado en blanco !!");	
+				 }catch( ArrayIndexOutOfBoundsException excepExcederPos){
+					 JOptionPane.showMessageDialog (null,"¡¡ Te has excedido en las posiciones !!");
+				 }			
 			}
 		});
 		

@@ -179,7 +179,7 @@ public class ExamenE extends JFrame {
 			
 			//JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de "+ingIntrod);
 				for(int i=0;i<ingresos.length;i++){
-				JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+devolverIngresos());
+				JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]);
 				}
 				}
 		});
@@ -264,9 +264,8 @@ public class ExamenE extends JFrame {
 	//------------------------------------------------------------------Metodo devolverIngresos: devolverá el array ingresos
 	public float  devolverIngresos(){
     	for(int i=0;i<ingresos.length;i++){
-    	System.out.println("ingresos= "+ingresos[i]); 	
-    	
-	    
+    	//System.out.println("ingresos= "+ingresos[i]); 	
+    	 
 	}
 		return ingIntrod;
 	

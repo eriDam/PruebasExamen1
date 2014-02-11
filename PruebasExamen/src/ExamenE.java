@@ -176,9 +176,10 @@ public class ExamenE extends JFrame {
 		btnImpI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Quiero q saque una ventana en pantalla utilizando el método devolverIngresos NO VA alternativa a cont para usar boton, con un for
-				//JOptionPane.showMessageDialog(null,"Número de Ingresos: "+devolverIngresos);
+			
+			//JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de "+ingIntrod);
 				for(int i=0;i<ingresos.length;i++){
-				JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]);
+				JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+devolverIngresos());
 				}
 				}
 		});
@@ -261,16 +262,15 @@ public class ExamenE extends JFrame {
 	
 	//En la clase Examen se crearán los siguientes métodos:
 	//------------------------------------------------------------------Metodo devolverIngresos: devolverá el array ingresos
-	public float devolverIngresos(){
-    	/**for(int i=0;i<ingresos.length;i++){
+	public float  devolverIngresos(){
+    	for(int i=0;i<ingresos.length;i++){
     	System.out.println("ingresos= "+ingresos[i]); 	
-    	}           ASÍ NO VA **/
-		
-	return ingIntrod;
-	    }	
+    	
+	    
+	}
+		return ingIntrod;
 	
-	
-	
+	}
 	//-----------------------------------Metodo devolverGastos: devolverá el array gastos------------------------------------
 	public float devolverGastos(){
 		/*for(int i=0;i<gastos.length;i++){

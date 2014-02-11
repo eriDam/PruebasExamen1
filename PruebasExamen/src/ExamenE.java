@@ -142,32 +142,27 @@ public class ExamenE extends JFrame {
 		btnGuardarG.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
-				//Cada vez que se apreta el botón “guardar gastos”: Se comprobará que no hay más gastosde 10
+				//Cada vez que se apreta el botón “guardar gastos”: Se comprobará que no hay más gastos de 10
 				if(gastoIntrod<10){
 				//Si hay menos, se almacenará el nuevo gasto al final del array correspondiente y se incrementará el número de gastos.
-				
-				//guardo en el array el texto campotxIntroGasto  convertido a float
+				//guardo en el array el texto introducido en campotxIntroGasto  convertido a float
 				 gastos[gastoIntrod]=Float.parseFloat(campotxIntroGasto.getText()); 
 				
-				//este texto vale la variable gastoIntrod convertida a String para mostrarlo en pantalla
-				numGast.setText(String.valueOf(gastoIntrod));	
-				//Voy imprimiendo x consola a ver
-				System.out.println("Número de Gasto: "+gastoIntrod+" introducido en caja con un valor de  "+gastos[gastoIntrod]);}
-				
-				
+				 //Voy imprimiendo x consola a ver
+				System.out.println("Número de Gasto: "+gastoIntrod+" introducido en caja con un valor de  "+gastos[gastoIntrod]);
+							
 				//Se actualizará la ventana con el valor de número de gastos.
 				gastoIntrod++;
+				//este texto vale la variable gastoIntrod convertida a String para mostrarlo en pantalla
+				numGast.setText(String.valueOf(gastoIntrod));
 				//EXTRA cuando el campo de texto sea introducido se pondra en blanco despues de guardar
 				campotxIntroGasto.setText("");
-				
-						
-				
-								
+				}
 				//cath especifica entre parentesis 1 parametro d excepcion
 				}catch ( NumberFormatException noNumber) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
 					//Si no se que excepcion quiero capturar pongo e 
 			      JOptionPane.showMessageDialog (null,"¡¡ Fijate, has puesto algo que no es un número \n     o lo has dejado en blanco !!");	
-				 }catch( ArrayIndexOutOfBoundsException excepExcederPos){
+				 }catch( ArrayIndexOutOfBoundsException excepExcd){
 					 JOptionPane.showMessageDialog (null,"¡¡ Te has excedido en las posiciones !!");
 				 }			
 			}
@@ -202,7 +197,7 @@ public class ExamenE extends JFrame {
 				//JOptionPane.showMessageDialog(null,"Número de Gastos: "+devolverGastos());
 				for(int i=0;i<gastos.length;i++){
 					
-				JOptionPane.showMessageDialog(null,"Número de gasto: "+i+ " introducido en caja con un valor de  "+gastoIntrod);
+				JOptionPane.showMessageDialog(null,"Número de gasto: "+i+ " introducido en caja con un valor de  "+gastos[i]);
 				}
 				
 			}

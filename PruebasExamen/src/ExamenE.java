@@ -105,14 +105,15 @@ public class ExamenE extends JFrame {
 				try{
 				//Se comprobará que no hay más ingresos de 10
 				if(ingIntrod<10){
-				//aumento en uno la posicion del array
-				ingIntrod++;
+				
 				//guardo en el array el texto campotxIntroIng  convertido a float
 				ingresos[ingIntrod]=Float.parseFloat(campotxIntroIng.getText());			
 				
 				//este numIngr vale la variable ingIntrod convertida a String para mostrarlo en pantalla
 				numIngr.setText(String.valueOf(ingIntrod));		
 				//
+				//aumento en uno la posicion del array
+				ingIntrod++;
 				campotxIntroIng.setText("");
 				//Voy imprimiendo x consola a ver
 				System.out.println("Número de ingreso: "+ingIntrod+ " introducido en caja con un valor de  "+ingresos[ingIntrod]);
@@ -143,14 +144,15 @@ public class ExamenE extends JFrame {
 				//Cada vez que se apreta el botón “guardar gastos”: Se comprobará que no hay más gastosde 10
 				if(gastoIntrod<10){
 				//Si hay menos, se almacenará el nuevo gasto al final del array correspondiente y se incrementará el número de gastos.
-				//Se actualizará la ventana con el valor de número de gastos.
-				gastoIntrod++;
+				
 				//guardo en el array el texto campotxIntroGasto  convertido a float
 				 gastos[gastoIntrod]=Float.parseFloat(campotxIntroGasto.getText()); 
 				
 				//este texto vale la variable gastoIntrod convertida a String para mostrarlo en pantalla
 				numGast.setText(String.valueOf(gastoIntrod));	
 				//EXTRA cuando el campo de texto sea introducido se pondra a cero
+				//Se actualizará la ventana con el valor de número de gastos.
+				gastoIntrod++;
 				campotxIntroGasto.setText("");
 				
 						

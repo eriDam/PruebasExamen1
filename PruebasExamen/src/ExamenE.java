@@ -187,40 +187,21 @@ public class ExamenE extends JFrame {
 		JButton btnImpI = new JButton("Imprimir Ingresos");
 		btnImpI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			try {
-			//Quiero q saque una ventana en pantalla utilizando el método devolverIngresos, NO VA, alternativa a cont para usar botoncon un for
-			//JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de "+devolverIngresos());
-				
-				//Creo un archivo de texto con los ingresos
-				FileWriter listaIngresos=new FileWriter ("listaIngresos.txt",true);
-				PrintWriter escribir= new PrintWriter (listaIngresos);
-				String dato;
-				//bf nos va a permitir capturar lo que ingresemos por teclado
-				BufferedReader bf=new BufferedReader (new InputStreamReader (System.in));
-			    
-				
 			for(int i=0;i<ingresos.length;i++){
 			JOptionPane.showMessageDialog(null,"Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]);
 			
-				String cadena= (String.valueOf(ingresos));
+				//String cadena= (String.valueOf(ingresos));
 				//ingIntrod=bf.readLine();//capturamos dato	
 				
 				
 				//Para poder almacenar todo estos datos necesito concatenarlos
 				//Guardar
-				escribir.println("Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]+cadena);
-				dato=bf.readLine();
+				//escribir.println("Número de ingreso: "+i+ " introducido en caja con un valor de  "+ingresos[i]+cadena);
+				//dato=bf.readLine();
 				}
 				//Despues del bucle importante cerrar el  flujo de archivos
-				listaIngresos.close();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					System.out.println("No puedo guardar los ingresos en el archivo");
-				
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				//listaIngresos.close();
+				 
 				}
 		});
 		btnImpI.setBounds(268, 97, 138, 23);
@@ -280,13 +261,13 @@ public class ExamenE extends JFrame {
 		btnOpciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Component unComponentePadre = null;
-				int seleccion = JOptionPane.showOptionDialog(unComponentePadre,"Seleccione opcion", "Selector de opciones",
+				Component unComponente = null;
+				int seleccion = JOptionPane.showOptionDialog(unComponente,"Seleccione opcion", "Selector de opciones",
 				JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null,   // null para icono por defecto.
-						   new Object[] { "Gastos", "Ingresos", "?" },   // null para YES, NO y CANCEL
-						   "opcion 1");
+				new Object[] { "Gastos", "Ingresos", "?" },   // null para YES, NO y CANCEL
+				"opcion 1");
 						 
 						if (seleccion != -1)
 						   System.out.println("seleccionada opcion " + (seleccion + 1));

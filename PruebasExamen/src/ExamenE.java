@@ -128,7 +128,8 @@ public class ExamenE extends JFrame {
 				numIngr.setText(String.valueOf(ingIntrod));	
 				campotxIntroIng.setText("");
 				}
-	
+				else//si se pasan de ingresos  muestro otra ventana
+				JOptionPane.showMessageDialog(null, "Has superado el numero máximo de ingresos");
 				//catch especifica entre parentesis 1 parametro d excepcion
 				}catch ( NumberFormatException noNumber) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
 					//Si no se que excepcion quiero capturar pongo e 
@@ -141,7 +142,8 @@ public class ExamenE extends JFrame {
 
 		btnGuardarI.setBounds(268, 15, 138, 23);
 		contentPane.add(btnGuardarI);
-		
+		 
+        
 		
 		
 		//Boton Guardar Gastos
@@ -165,7 +167,9 @@ public class ExamenE extends JFrame {
 				numGast.setText(String.valueOf(gastoIntrod));
 				//EXTRA cuando el campo de texto sea introducido se pondra en blanco despues de guardar
 				campotxIntroGasto.setText("");
-				}
+				}else//si se pasan de gastos  muestro otra ventana
+					JOptionPane.showMessageDialog(null, "Has superado el numero máximo de gastos");
+				
 				//cath especifica entre parentesis 1 parametro d excepcion
 				}catch ( NumberFormatException noNumber) { //ArithmeticException, ClassCastException, IndexOutOfBoundsException, NullPointerException
 					//Si no se que excepcion quiero capturar pongo e 
